@@ -36,8 +36,8 @@ function ContactusForm() {
     // Disable the button during submission
     setButtonDisabled(true);
     setButtonName("Submitting...");
-
-    axios.post('https://script.google.com/macros/s/AKfycbxDdTOGD4ofOmhf5w83D7e3ZgInK3k3y_lUJOA3gSH5LUEjS9y-BHumxS3sL0FWGFWj/exec', toFormData(UserData))
+    let url = "https://script.google.com/macros/s/AKfycbzuIL1wKDuoMjSehI4Cuc4yR109Y_TgZCSCtrJ_jCQtqyXvbLHblEw-4aLj1Uz8UhFP/exec";
+    axios.post(url, toFormData(UserData))
       .then((response) => {
         console.log(response);
         setFinalData(response.data);
